@@ -103,8 +103,12 @@ console.log('Cognomi ' + lastNames);
 var lastNameUser = prompt('Inserisci il tuo cognome')?.trim();
 
 if(lastNameUser){
-    //Trasformare la prima lettera maiuscola e tutto il resto in minuscolo;
+    //Trasformare la prima lettera maiuscola
     lastNameUser = lastNameUser.replace(lastNameUser[0], lastNameUser[0].toUpperCase());
+
+    //Modo alternativo per rendere la prima lettera maiuscola
+    //lastNameUser = lastNameUser[0].toUpperCase() + lastNameUser.slice(1);
+
     console.log(lastNameUser);
 
     //Inseriamo il cognome dell'utente nell'array lastNames
