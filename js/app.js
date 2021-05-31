@@ -100,7 +100,11 @@ var lastNames = ['Bianchi','Neri','Rossi','Gialli','Verdi'];
 console.log('Cognomi ' + lastNames);
 
 //Chiediamo all'utente il suo cognome
-var lastNameUser = prompt('Inserisci il tuo cognome');
+var lastNameUser = prompt('Inserisci il tuo cognome').trim();
+
+//Trasformare la prima lettera maiuscola e tutto il resto in minuscolo;
+lastNameUser = lastNameUser.replace(lastNameUser[0], lastNameUser[0].toUpperCase());
+console.log(lastNameUser);
 
 //Inseriamo il cognome dell'utente nell'array lastNames
 lastNames.push(lastNameUser);
