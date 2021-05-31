@@ -1,3 +1,7 @@
+/**
+ * Esercizio Mail
+ */
+
 //Array vuoto lista email
 var listEmail = [];
 var numberGuest = 20;
@@ -26,7 +30,7 @@ for(var i = 0; i < numberGuest; i++){
 console.log(listEmail);
 
 //Chiediamo all'utente la sua email
-var emailUser = prompt('Inserisci la tua email per vedere se sei sulla lista PROVA EMAIL CORRETTA ' + listEmail[0]);
+var emailUser = prompt('Inserisci la tua email per vedere se sei sulla lista --> PROVA EMAIL CORRETTA: ' + listEmail[0]);
 var message = 'La tua email non è presente sulla lista';
 
 console.log(emailUser);
@@ -38,7 +42,8 @@ console.log(emailUser);
 //Prima soluzione con ciclo for utilizzando la proprietà length
 for(var i = 0; i < listEmail.length; i++){
     if(listEmail[i] === emailUser){
-        message = `la tua email ${emailUser} è presente sulla lista, congratulazioni!`
+        message = `la tua email ${emailUser} è presente sulla lista, congratulazioni!`;
+        //break; Lo metterei per evitare di ciclare ulteriormente se l'email è stata già trovata ad esempio all'indice 0 su un milione di email
     }
 }
 
@@ -80,4 +85,34 @@ while(listEmail[i]){
 
 //Mostriamo il messaggio del controllo
 console.log(message);
-alert(message)
+alert(message);
+
+
+
+
+/**
+ * Esercizio Lista Cognomi
+ */
+
+//array che contiene elementi (cognomi)
+var lastNames = ['Bianchi','Neri','Rossi','Gialli','Verdi'];
+
+console.log('Cognomi ' + lastNames);
+
+//Chiediamo all'utente il suo cognome
+var lastNameUser = prompt('Inserisci il tuo cognome');
+
+//Inseriamo il cognome dell'utente nell'array lastNames
+lastNames.push(lastNameUser);
+
+console.log('Il cognome è stato aggiunto ' + lastNames);
+
+//Ordiniamo l'array Alfabeticamente (crescente)
+lastNames = lastNames.sort();
+
+//Stampiamo la lista nel documento
+var eleLastNames = document.getElementById('lastNames');
+
+for(var i = 0; i < lastNames.length; i++){
+    eleLastNames.innerHTML += `<li>${lastNames[i]}</li>`;
+}
